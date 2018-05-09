@@ -69,14 +69,8 @@ class Student < InteractiveRecord
     DB[:conn].execute(sql)
     end
 
-  #  def self.find_by(attribute_hash)
-  #    sql = "SELECT * FROM #{self.table_name} WHERE #{self.attrs_as_args(attribute_hash)[0]} = '#{self.values_as_args(attribute_hash)[0]}'"
-#      DB[:conn].execute(sql)
-#     end
-
-  def self.values_as_attributes(attribute)
-    values = []
-    attribute.each do |value_1, value_2|
-      value.class = String? "#{value_1} = '#{value_2}'": "#{value_1} = #{value_2}"
+  def self.values_as_attributes(attributes, join = "AND")
+    attributes.collect do |value_1, value_2|
+      value.class == String? "#{value_1} = '#{value_2}'": "#{value_1} = #{value_2}"
     end.join(join)
  end
