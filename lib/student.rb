@@ -69,11 +69,11 @@ class Student < InteractiveRecord
     DB[:conn].execute(sql)
     end
 
-    def self.build_atrribution_or_conditional(parameters, join = "AND")
-  +    parameters.collect do |parameter, value|
-  +      value.class == String ? "#{parameter} = '#{value}'" : "#{parameter} = #{value}"
-  +    end.join(join)
-  +  end
+#    def self.build_atrribution_or_conditional(parameters, join = "AND")
+#  +    parameters.collect do |parameter, value|
+#  +      value.class == String ? "#{parameter} = '#{value}'" : "#{parameter} = #{value}"
+#  +    end.join(join)
+#  +  end
 
   def self.values_as_attributes(attributes, join = "AND")
     attributes.collect do |attribute, value|
