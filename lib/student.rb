@@ -74,3 +74,5 @@ class Student < InteractiveRecord
       value.class == String? "#{value_1} = '#{value_2}'": "#{value_1} = #{value_2}"
     end.join(join)
  end
+
+end
