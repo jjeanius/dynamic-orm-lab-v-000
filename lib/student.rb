@@ -64,7 +64,7 @@ class Student < InteractiveRecord
   end
 
   def self.find_by(attribute)
-    sql = "SELECT * FROM #{self.table_name} WHERE #{self.find_by_name(name)[0]} = ?, #{self.values_as_attributes(attribute)[0]}"
+    sql = "SELECT * FROM #{self.table_name} WHERE #{self.find_by_name(name)[0]} = #{self.values_as_attributes(attribute)[0]}"
     DB[:conn].execute(sql)
     end
 
@@ -75,7 +75,7 @@ class Student < InteractiveRecord
 
   def self.values_as_attributes(attribute)
     values = []
-    attribute.each do |value_1, value_2|
+    attribute.each do |value_1, value_2, value_3|
       values << value_1
     end
       values
