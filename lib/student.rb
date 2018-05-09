@@ -77,7 +77,7 @@ class Student < InteractiveRecord
 
   def self.values_as_attributes(attributes, join = "AND")
     attributes.collect do |attribute, value|
-      value.class == String? "#{attribute} = '#{value}'" : "#{attribute} = #{value}"
+      value.class == String ? "#{attribute} = '#{value}'" : "#{attribute} = #{value}"
     end.join(join)
  end
 
