@@ -77,6 +77,6 @@ class Student < InteractiveRecord
   def self.values_as_attributes(attribute)
     values = []
     attribute.each do |value_1, value_2|
-      value.class == String? "#{value_1} = '#{value_2}'": "#{value_1} = #{value_2}"
+      value.class = String? "#{value_1} = '#{value_2}'": "#{value_1} = #{value_2}"
     end.join(join)
  end
