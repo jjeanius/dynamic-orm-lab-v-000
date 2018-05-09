@@ -75,7 +75,7 @@ class Student < InteractiveRecord
 
   def self.values_as_attributes(attribute)
     values = []
-    attribute.each do |value_1, value_2, value_3|
+    attribute.each do |value_1|
       values << value_1
     end
       values
